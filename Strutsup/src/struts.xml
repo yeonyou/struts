@@ -16,6 +16,16 @@
 	</action>
 </package>
 
+<package name="file2" extends="struts-default">
+	<action name="multiUploadListForm">
+		<result>/upload/multiUploadList.jsp</result>
+	</action>
+
+	<action name="multiUploadListAction" class="file.multiUploadListAction" method="upload">
+		<result>/upload/multiUploadListOK.jsp</result>
+	</action>
+</package>
+
 <package name="file3" extends="struts-default">
 	<action name="multiUploadArrayForm">
 		<result>/upload/multiUploadArray.jsp</result>
