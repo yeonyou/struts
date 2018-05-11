@@ -10,9 +10,12 @@ public class fileUploadAction extends ActionSupport {
 	private File upload;
 	private String uploadContentType;
 	private String uploadFileName;
-	private String fileUploadPath ="C:\\Users\\ศฃมุ\\Desktop\\eclipse-workspace\\Java\\upload\\";
+	private String fileUploadPath ="C:/java/upload/";
 
 	public String upload() throws Exception {
+		
+		File destFile = new File(fileUploadPath + getUploadFileName());
+		FileUtils.copyFile(getUpload(), destFile);
 		return SUCCESS;
 	}
 
@@ -39,5 +42,11 @@ public class fileUploadAction extends ActionSupport {
 	public void setUploadFileName(String uploadFileName) {
 		this.uploadFileName = uploadFileName;
 	}	
+	public String getFileUploadPath() {
+		return fileUploadPath;
+	}
+	public void setFileUploadPath(String fileUploadPath) {
+		this.fileUploadPath = fileUploadPath;
+	}
 
 }
